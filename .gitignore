@@ -1,0 +1,12 @@
+#IntelliJ project files
+*.asc
+.idea
+*.iml
+*.jmx
+/target
+.classpath
+.project
+.settings/
+/bin
+.DS_Store
+.log
