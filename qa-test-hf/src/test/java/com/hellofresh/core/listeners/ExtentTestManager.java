@@ -6,6 +6,9 @@ import com.relevantcodes.extentreports.ExtentTest;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Extent reporter class used for HTML reporting
+ */
 public class ExtentTestManager {
     static Map extentTestMap = new HashMap();
     static ExtentReports extent = ExtentManager.getReporter();

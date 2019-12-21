@@ -1,0 +1,18 @@
+{
+  "firstname": "Firstname",
+  "lastname": "Lastname",
+  "password": "Qwerty",
+  "day": "1",
+  "month": "1",
+  "year": "2000",
+  "company": "Company",
+  "address1": "Qwerty, 123",
+  "address2": "zxcvb",
+  "city": "Qwerty",
+  "idState": "Colorado",
+  "postcode": "12345",
+  "other": "Qwerty",
+  "phone": "12345123123",
+  "phoneMobile": "12345123123",
+  "alias": "hf"
+}

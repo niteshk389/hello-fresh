@@ -1,5 +1,8 @@
 package com.hellofresh.core.constants;
 
+/**
+ * Enum containing browser names
+ */
 public enum Browsers {
     CHROME_BROWSER("chrome"), FIREFOX_BROWSER("firefox"), SAFARI_BROWSER("safari");
 

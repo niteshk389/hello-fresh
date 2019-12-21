@@ -1,29 +1,51 @@
 package com.hellofresh.models;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * Booking POJO class
+ */
 public class BookingModel {
 
-    private BookingDates bookingDates;
-    private String bookingid;
+    @JsonProperty("bookingdates")
+    private BookingDates bookingdates;
+
+    @JsonProperty("bookingid")
+    private int bookingid;
+
+    @JsonProperty("depositpaid")
     private Boolean depositpaid;
+
+    @JsonProperty("email")
     private String email;
+
+    @JsonProperty("firstname")
     private String firstname;
+
+    @JsonProperty("lastname")
     private String lastname;
+
+    @JsonProperty("phone")
     private String phone;
+
+    @JsonProperty("roomid")
     private int roomid;
 
     public BookingDates getBookingDates() {
-        return bookingDates;
+        return bookingdates;
     }
 
     public void setBookingDates(BookingDates bookingDates) {
-        this.bookingDates = bookingDates;
+        this.bookingdates = bookingDates;
     }
 
-    public String getBookingid() {
+    public int getBookingid() {
         return bookingid;
     }
 
-    public void setBookingid(String bookingid) {
+    public void setBookingid(int bookingid) {
         this.bookingid = bookingid;
     }
 
@@ -75,4 +97,23 @@ public class BookingModel {
         this.roomid = roomid;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BookingModel)) return false;
+        BookingModel that = (BookingModel) o;
+        return getRoomid() == that.getRoomid() &&
+                       Objects.equals(getBookingDates(), that.getBookingDates()) &&
+                       Objects.equals(getBookingid(), that.getBookingid()) &&
+                       Objects.equals(getDepositpaid(), that.getDepositpaid()) &&
+                       Objects.equals(getEmail(), that.getEmail()) &&
+                       Objects.equals(getFirstname(), that.getFirstname()) &&
+                       Objects.equals(getLastname(), that.getLastname()) &&
+                       Objects.equals(getPhone(), that.getPhone());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBookingDates(), getBookingid(), getDepositpaid(), getEmail(), getFirstname(), getLastname(), getPhone(), getRoomid());
+    }
 }

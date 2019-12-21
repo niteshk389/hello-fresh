@@ -15,6 +15,14 @@ public final class JSONUtils {
     public JSONUtils() {
 
     }
+
+    /**
+     * Methos to get POJO object from json string
+     * @param rawJSONString : json string to convert to object
+     * @param type class of the object
+     * @param <T> any POJO class
+     * @return Object of POJO class
+     */
     public <T> T getJSONObjectFromString(final String rawJSONString, Class<T> type) {
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -26,6 +34,11 @@ public final class JSONUtils {
         }
     }
 
+    /**
+     * Method to convert POJOs to json string
+     * @param object which is required to be converted to JSON string
+     * @return json string
+     */
     public String getJSONFromObject(Object object) {
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -35,13 +48,6 @@ public final class JSONUtils {
             LOGGER.info("I/O Error while converting JSON to Map", e);
             return null;
         }
-    }
-
-    public String prettyPrintJSON(final String str) {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        JsonParser jp = new JsonParser();
-        JsonElement je = jp.parse(str);
-        return gson.toJson(je);
     }
 
 }

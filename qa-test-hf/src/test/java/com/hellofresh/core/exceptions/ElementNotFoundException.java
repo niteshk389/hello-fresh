@@ -1,16 +1,13 @@
 package com.hellofresh.core.exceptions;
 
-import com.hellofresh.core.utils.Locator;
+
+import com.hellofresh.core.listeners.ExtentTestManager;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class ElementNotFoundException extends RuntimeException {
-    private Locator locator;
-
-    public ElementNotFoundException(Locator locator, Throwable cause) {
-        super(cause);
-        this.locator = locator;
-    }
-    @Override
-    public String getMessage() {
-        return locator + " does not contain the element \"" + locator + "\" identified by locator: " + locator;
+    public ElementNotFoundException(Throwable cause) {
+        super("Element not present on webpage", cause);
+        ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed",
+                cause.getLocalizedMessage());;
     }
 }

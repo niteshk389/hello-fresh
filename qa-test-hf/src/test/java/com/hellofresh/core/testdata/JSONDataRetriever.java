@@ -19,10 +19,15 @@ public class JSONDataRetriever implements DataRetriever {
     }
 
     public List<Map<String, String>> getDataObjectArray(String filename) {
+        ///TODO implement method to get data from JSON arrays
         return null;
     }
 
-
+    /**
+     * Method to Read JSON file
+     * @param filePath
+     * @return
+     */
     private static String readJsonFile(String filePath)
     {
         StringBuilder contentBuilder = new StringBuilder();
@@ -42,6 +47,9 @@ public class JSONDataRetriever implements DataRetriever {
         return contentBuilder.toString();
     }
 
+    /**
+     * Method to convert json string to object of class passed as parameter
+     */
     public <T> T getJSONObjectFromString(final String rawJSONString, Class<T> type) {
         try {
             ObjectMapper mapper = new ObjectMapper();

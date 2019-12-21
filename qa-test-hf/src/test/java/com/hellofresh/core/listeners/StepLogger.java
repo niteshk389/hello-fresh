@@ -7,6 +7,9 @@ import org.aspectj.lang.annotation.Before;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * AspectJ class to intercept all method calls annotated with @Step
+ */
 @Aspect
 public class StepLogger {
 

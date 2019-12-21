@@ -1,9 +1,13 @@
 package com.hellofresh.pageobjects;
 
+import com.hellofresh.core.constants.CommonConstants;
+import com.hellofresh.core.driver.Driver;
 import com.hellofresh.core.testdata.TestDataGenerator;
 import com.hellofresh.core.utils.BasicPageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import java.util.Map;
 
@@ -63,8 +67,16 @@ public class RegistrationPage  extends BasicPageObject {
     @FindBy(id = "submitAccount")
     WebElement submitAccountButton;
 
+    @FindBy(id = "submitAccount")
+    WebElement genderRadioButton;
+
+    public RegistrationPage() {
+        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), CommonConstants.VISIBILITY_TIMEOUT);
+        PageFactory.initElements(pageFactory, this);
+    }
+
     public void enterRegistrationDetails(Map<String, String> userDetails){
-        browser_actions.enterText(emailTextField, new TestDataGenerator().randomAlphabeticForMail());
+        browser_actions.waitForVisibility(genderRadioButton);
         browser_actions.enterText(firstNameTextField, userDetails.get("firstname"));
         browser_actions.enterText(lastNameTextField, userDetails.get("lastname"));
         browser_actions.enterText(passwordTextField, userDetails.get("password"));
@@ -75,7 +87,7 @@ public class RegistrationPage  extends BasicPageObject {
         browser_actions.enterText(address1TextField, userDetails.get("address1"));
         browser_actions.enterText(address2TextField, userDetails.get("address2"));
         browser_actions.enterText(cityTextField, userDetails.get("city"));
-        browser_actions.selectOption(idStateSelect, userDetails.get("idState"));
+        browser_actions.selectByVisibleText(idStateSelect, userDetails.get("idState"));
         browser_actions.enterText(postcodeTextField, userDetails.get("postcode"));
         browser_actions.enterText(otherTextField, userDetails.get("other"));
         browser_actions.enterText(phoneTextField, userDetails.get("phone"));
@@ -83,8 +95,8 @@ public class RegistrationPage  extends BasicPageObject {
         browser_actions.enterText(aliasTextField, userDetails.get("alias"));
     }
 
-    public HomePage clickSubmitAccountButton() {
+    public SignInLandingPage clickSubmitAccountButton() {
         browser_actions.click(submitAccountButton);
-        return new HomePage();
+        return new SignInLandingPage();
     }
 }

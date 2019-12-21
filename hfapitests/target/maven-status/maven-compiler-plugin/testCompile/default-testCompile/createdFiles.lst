@@ -1,0 +1,12 @@
+com/hellofresh/models/BookingModel.class
+com/hellofresh/constants/CommonConstants.class
+com/hellofresh/steps/BookingServiceSteps.class
+com/hellofresh/utils/JSONUtils.class
+com/hellofresh/models/BookingServiceModel.class
+com/hellofresh/models/BookingDates.class
+com/hellofresh/utils/PropertyReader.class
+com/hellofresh/models/RequestModel.class
+com/hellofresh/constants/BookingConstants.class
+com/hellofresh/utils/RestClientUtils.class
+com/hellofresh/utils/TestRunner.class
+com/hellofresh/utils/Context.class

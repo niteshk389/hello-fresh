@@ -3,6 +3,9 @@ package com.hellofresh.models;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class containing all the elements required for HTTP requests
+ */
 public class RequestModel {
     private String url;
     private Map<String, String> params;

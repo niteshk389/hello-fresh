@@ -3,6 +3,9 @@ package com.hellofresh.core.driver;
 import com.hellofresh.core.constants.Browsers;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * Class containing methods related to webdriver
+ */
 public class Driver {
     private static ThreadLocal<WebDriver> driverLocal = new ThreadLocal<WebDriver>();
 

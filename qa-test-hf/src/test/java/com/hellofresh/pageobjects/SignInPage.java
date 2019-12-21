@@ -1,11 +1,15 @@
 package com.hellofresh.pageobjects;
 
+import com.hellofresh.core.constants.CommonConstants;
 import com.hellofresh.core.utils.BasicPageObject;
 import com.hellofresh.core.driver.Driver;
 import com.hellofresh.core.listeners.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+
+import java.util.Map;
 
 public class SignInPage extends BasicPageObject {
 
@@ -35,7 +39,8 @@ public class SignInPage extends BasicPageObject {
 
     public SignInPage(){
         //This initElements method will create all WebElements
-        PageFactory.initElements(Driver.getDriver(), this);
+        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), CommonConstants.VISIBILITY_TIMEOUT);
+        PageFactory.initElements(pageFactory, this);
     }
 
     @Step
@@ -49,9 +54,9 @@ public class SignInPage extends BasicPageObject {
     }
 
     @Step
-    public HomePage clickSignInButton() {
+    public SignInLandingPage clickSignInButton() {
         browser_actions.click(loginButton);
-        return new HomePage();
+        return new SignInLandingPage();
     }
 
     @Step
@@ -63,5 +68,11 @@ public class SignInPage extends BasicPageObject {
     public RegistrationPage clickCreateAccountButton() {
         browser_actions.click(createAccountButton);
         return new RegistrationPage();
+    }
+
+    public SignInLandingPage signIn(Map<String, String> loginData) {
+        enterEmailAddress(loginData.get("email"));
+        enterPassword(loginData.get("password"));
+        return clickSignInButton();
     }
 }

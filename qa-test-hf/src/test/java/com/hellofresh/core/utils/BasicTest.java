@@ -15,6 +15,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+/**
+ * Class to be extended by all test scripts - contains all setup and teardown methods
+ */
 public class BasicTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(BasicTest.class);
 
@@ -44,6 +47,7 @@ public class BasicTest {
         LOGGER.info("================================================================");
         LOGGER.info("Start of Test case");
         LOGGER.info("================================================================");
+        //Get all intercepted @Step annotation calls
         for(String message : StepLogger.getMethodsCallsList()) {
             LOGGER.info(message);
             ExtentTestManager.getTest().log(LogStatus.PASS, message);
