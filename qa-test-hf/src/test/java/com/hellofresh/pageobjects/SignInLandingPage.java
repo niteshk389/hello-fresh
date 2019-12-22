@@ -29,7 +29,6 @@ public class SignInLandingPage extends BasicPageObject {
 
     public SignInLandingPage(){
         //This initElements method will create all WebElements
-        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), CommonConstants.VISIBILITY_TIMEOUT);
         PageFactory.initElements(pageFactory, this);
     }
 

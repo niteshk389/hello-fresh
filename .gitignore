@@ -3,7 +3,7 @@
 .idea
 *.iml
 *.jmx
-/target
+target
 .classpath
 .project
 .settings/

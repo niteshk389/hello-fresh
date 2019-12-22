@@ -16,7 +16,6 @@ public class ProductListPage extends BasicPageObject {
 
     public ProductListPage(){
         //This initElements method will create all WebElements
-        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), CommonConstants.VISIBILITY_TIMEOUT);
         PageFactory.initElements(pageFactory, this);
     }
 

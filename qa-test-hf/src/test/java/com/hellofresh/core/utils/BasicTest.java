@@ -36,8 +36,13 @@ public class BasicTest {
     }
 
     @BeforeMethod
-    public void logStart() {
-        Driver.initialize(Browsers.CHROME_BROWSER);
+    public void setup() {
+        String browser = System.getProperty("browser");
+        if(browser == null) {
+            Driver.initialize(Browsers.CHROME_BROWSER);
+        } else {
+            Driver.initialize(Browsers.fromString(browser.toLowerCase()));
+        }
         Driver.getDriver().manage().deleteAllCookies();
         StepLogger.clearMethodsCallsList();
     }

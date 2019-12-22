@@ -22,14 +22,6 @@ public class SignInPage extends BasicPageObject {
     @FindBy(id = "SubmitLogin")
     WebElement loginButton;
 
-    @FindBy(className = "account")
-    WebElement accountNameLabel;
-
-    @FindBy(className = "info-account")
-    WebElement accountInfoLabel;
-
-    @FindBy(className = "logout")
-    WebElement logoutLink;
 
     @FindBy(id = "email_create")
     WebElement registrationEmailTextField;
@@ -39,7 +31,6 @@ public class SignInPage extends BasicPageObject {
 
     public SignInPage(){
         //This initElements method will create all WebElements
-        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), CommonConstants.VISIBILITY_TIMEOUT);
         PageFactory.initElements(pageFactory, this);
     }
 

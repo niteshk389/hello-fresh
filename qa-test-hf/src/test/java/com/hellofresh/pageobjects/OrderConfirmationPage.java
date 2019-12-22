@@ -25,7 +25,6 @@ public class OrderConfirmationPage extends BasicPageObject {
 
     public OrderConfirmationPage(){
         //This initElements method will create all WebElements
-        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), CommonConstants.VISIBILITY_TIMEOUT);
         PageFactory.initElements(pageFactory, this);
     }
 

@@ -16,7 +16,6 @@ public class CartSummaryPage extends BasicPageObject {
 
     public CartSummaryPage(){
         //This initElements method will create all WebElements
-        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), CommonConstants.VISIBILITY_TIMEOUT);
         PageFactory.initElements(pageFactory, this);
     }
 

@@ -13,4 +13,13 @@ public enum Browsers {
     public String getName() {
         return this.name;
     }
+
+    public static Browsers fromString(String browser) {
+        for (Browsers b : Browsers.values()) {
+            if (b.getName().equalsIgnoreCase(browser)) {
+                return b;
+            }
+        }
+        return null;
+    }
 }

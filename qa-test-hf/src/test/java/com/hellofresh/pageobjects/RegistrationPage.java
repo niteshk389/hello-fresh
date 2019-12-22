@@ -71,7 +71,6 @@ public class RegistrationPage  extends BasicPageObject {
     WebElement genderRadioButton;
 
     public RegistrationPage() {
-        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), CommonConstants.VISIBILITY_TIMEOUT);
         PageFactory.initElements(pageFactory, this);
     }
 

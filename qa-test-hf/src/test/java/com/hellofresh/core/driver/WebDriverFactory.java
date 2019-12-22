@@ -10,6 +10,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -53,19 +54,26 @@ public class WebDriverFactory {
     }
 
     private WebDriver getSafariDriver() {
-        System.setProperty(CommonConstants.SAFARI_DRIVER_PATH_CONFIG, System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+        System.setProperty(CommonConstants.SAFARI_DRIVER_PATH_CONFIG, getFilePathBasedOnOs(CommonConstants.RESOURCE_DIR + CommonConstants.SAFARI_DRIVER_FILE));
         return new SafariDriver();
     }
 
     private WebDriver getFirefoxDriver() {
-        System.setProperty(CommonConstants.GECKO_DRIVER_PATH_CONFIG, System.getProperty("user.dir") + "/src/test/resources/geckodriver");
+        System.setProperty(CommonConstants.GECKO_DRIVER_PATH_CONFIG, getFilePathBasedOnOs(CommonConstants.RESOURCE_DIR + CommonConstants.GECKO_DRIVER_FILE));
         return new FirefoxDriver();
     }
 
     private WebDriver getChromeDriver() {
-        System.setProperty(CommonConstants.CHROME_DRIVER_PATH_CONFIG, System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+        System.setProperty(CommonConstants.CHROME_DRIVER_PATH_CONFIG, getFilePathBasedOnOs(CommonConstants.RESOURCE_DIR + CommonConstants.CHROME_DRIVER_FILE));
         WebDriver driver = new ChromeDriver();
         return driver;
+    }
+
+    private String getFilePathBasedOnOs(String path) {
+        if (System.getProperty("os.name").toLowerCase().contains("win")) {
+            return path.replaceAll("/", File.separator);
+        }
+        return path;
     }
 
 }

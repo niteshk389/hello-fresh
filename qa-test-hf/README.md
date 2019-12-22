@@ -3,7 +3,7 @@ This is UI automation framework bases on selenium following Page Object Model st
 #### Test execution steps:
 Test scripts can be executed with following command:
 ```$xslt
-mvn clean test -Denv=int
+mvn clean test -Denv=int -Dbrowser=chrome
 ``` 
 where in -Denv flag represent the environment on which the execution of tests is required.
 

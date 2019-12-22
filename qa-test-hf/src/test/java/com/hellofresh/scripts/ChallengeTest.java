@@ -25,8 +25,8 @@ import java.util.Map;
 
 public class ChallengeTest extends BasicTest {
 
-    String loginDataFileName = CommonConstants.RESOURCE_DIR + "LoginData.json";
-    String registrationDataFileName = CommonConstants.RESOURCE_DIR + "RegistrationData.json";
+    String loginDataFileName = "LoginData.json";
+    String registrationDataFileName = "RegistrationData.json";
     Map<String, String> loginData = new JSONDataRetriever().getDataObject(loginDataFileName);
     Map<String, String> registrationData = new JSONDataRetriever().getDataObject(registrationDataFileName);
 

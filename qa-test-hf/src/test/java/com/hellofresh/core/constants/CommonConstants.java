@@ -10,10 +10,9 @@ public class CommonConstants {
     public static final String SAFARI_DRIVER_PATH_CONFIG = "webdriver.safari.driver";
     public static final String GECKO_DRIVER_PATH_CONFIG = "webdriver.gecko.driver";
     public static final String SAFARI_DRIVER_FILE = "safaridriver";
+    public static final String GECKO_DRIVER_FILE = "geckodriver";
     public static final String IMPLICIT_WAIT_SETTING = "driver.implicitwait";
     public static final String APP_URL_CONFIG = "app.url";
-    public static final String RESOURCE_DIR = System.getProperty("user.dir") + "/src/test/resources/testData/";
-    public static final int VISIBILITY_TIMEOUT = 10;
-
-
+    public static final String RESOURCE_DIR = System.getProperty("user.dir") + "/src/test/resources/";
+    public static final String TEST_DATA_DIR = System.getProperty("user.dir") + "/src/test/resources/testData/";
 }

@@ -4,6 +4,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +15,8 @@ public class JSONDataRetriever implements DataRetriever {
     private static final Logger LOGGER = LoggerFactory.getLogger(JSONDataRetriever.class);
 
     public Map<String, String> getDataObject(String filename) {
-        String json = readJsonFile(filename);
+        String filePath = getClass().getClassLoader().getResource( "testData" + File.separator + filename).getPath();
+        String json = readJsonFile(filePath);
         return getJSONObjectFromString(json, Map.class);
     }
 

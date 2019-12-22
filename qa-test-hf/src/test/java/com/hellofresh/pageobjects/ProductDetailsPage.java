@@ -19,7 +19,6 @@ public class ProductDetailsPage extends BasicPageObject {
 
     public ProductDetailsPage(){
         //This initElements method will create all WebElements
-        AjaxElementLocatorFactory pageFactory = new AjaxElementLocatorFactory(Driver.getDriver(), 10);
         PageFactory.initElements(pageFactory, this);
     }
 
